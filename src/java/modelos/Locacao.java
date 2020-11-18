@@ -28,6 +28,26 @@ public class Locacao {
   private Date data;  
   
   
+  public ResultSet consultarInner(){
+    Connection con = Conexao.conectar();
+    
+    
+    String sql ="select l.id, l.placacarro, c.placa, c.modelo, l.cpfcliente, cli.nome," + 
+     "             l.data, l.dataentrega, l.datadevolucao " +
+      "            from locacao l, carro c, cliente cli " +
+        "         where l.placacarro = c.placa " +
+                 "and l.cpfcliente = cli.cpf;";
+                 
+    ResultSet rs = null;
+      try{
+          PreparedStatement stm = con.prepareStatement(sql);
+          rs = stm.executeQuery();
+      }catch (SQLException ex) {
+          
+      }
+    return rs;
+  }
+  
   public List<Locacao> consultar(String cliente){
      List<Locacao> lista = new ArrayList<>();
      Connection con = Conexao.conectar();     
