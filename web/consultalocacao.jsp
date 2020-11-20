@@ -38,6 +38,7 @@
                 <th>cliente</th>
                 <th>Data</th>
                 <th>Data Retirada</th>
+                <th>Ações</th>
                 </thead>
                 <tbody>
                     <% for (Locacao loc : locacoes) {%>
@@ -47,6 +48,7 @@
                         <td><%out.write(loc.getCfpcliente());%></td>
                         <td><%out.write(String.valueOf(loc.getData()));%></td>
                         <td><%out.write(String.valueOf(loc.getDataentrega()));%></td>
+                        <td><%out.write("<a href=cadastrodevolucao.jsp?idlocacao="+ loc.getId()+">Devolver</a>");%></td>
                     </tr>
                     <%}%>
                 </tbody>    

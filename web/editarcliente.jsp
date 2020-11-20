@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Editar cliente</h1>
         <hr/>
         <%
             String cpfcliente = request.getParameter("cpfcliente");
@@ -27,26 +27,26 @@
         <form action="recebeeditacliente.jsp" method="POST">
             
             <label> CPF do cliente</label>
-            <input type="text" name="placa"
+            <input type="text" name="cpf"
                
                    value="<%out.write(c.getCpf());%>"/>
             <br />
             <label>Nome</label>
-            <input type="text" name="marca" 
+            <input type="text" name="nome" 
                    value="<%out.write(c.getNome());%>"/>
             <br/>
             <label> Número do cartão</label>
-            <input type="text" name="modelo"
+            <input type="text" name="numerocartao"
                    
                    value="<%out.write(c.getNumerocartao());%>"/>
             <br/>
             <label> E-mail</label>
-            <input type="text" name="km"
+            <input type="text" name="email"
                    
                    value="<%out.write(""+c.getEmail());%>"/>
             <br/>
             <label> Fone</label>
-            <input type="text" name="modelo"
+            <input type="text" name="fone"
                    
                    value="<%out.write(c.getFone());%>"/>
             
