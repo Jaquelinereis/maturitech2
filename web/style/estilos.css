@@ -1,0 +1,27 @@
+
+button{
+    background-color: red;
+    color: white;
+   }
+   
+   .error{
+       color: red;
+       font-style: italic;
+   } 
+   
+ header {
+  background-color: silver;
+  margin: 2px;
+  padding: 2px; 
+  text-align: center;
+  font-size: 35px;
+  color: blue;
+}
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
