@@ -52,7 +52,7 @@
             <input type="text" name="idlocacao" readonly="true" 
                    value="<%out.write(""+locacao.getId());%>" /><br />
             
-            <label>Placa Carro</label>
+            <label>Carro</label>
             <input type="text"  readonly="true" 
                    value="<%out.write(placa);%>" /> <br />
             

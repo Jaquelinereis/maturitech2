@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <script src="scripts/menu.js" > </script>
         <h1>Locacar</h1>
         <%
         String placa = request.getParameter("placa");

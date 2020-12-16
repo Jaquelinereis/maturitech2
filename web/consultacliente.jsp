@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="style/estilos.css">
         <style>
             table {
                 font-family: arial, sans-serif;
@@ -31,6 +32,14 @@
         </style>
     </head>
     <body>
+        <header>
+            <script src="scripts/cabecalho.js" ></script>
+        </header>
+         <section>
+            <nav>
+        <script src="scripts/menu.js" > </script>
+         </nav>
+             <article>
         <h1>Consulta cliente</h1>
          <hr />
        <%
@@ -51,6 +60,8 @@
         
          </head> 
          <tbody>
+             
+       
              <% for(Cliente c: clientes) {%>
              <tr>
                  <td><% out.write(c.getCpf());%></td>
@@ -66,6 +77,9 @@
              <%}%>
              
          </tbody>
-    </table>     
+    </table>
+             <footer>
+            <script src="scripts/rodape.js"></script>
+        </footer>   
     </body>
 </html>

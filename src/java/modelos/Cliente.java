@@ -16,6 +16,26 @@ public class Cliente {
   private String numerocartao;
   private String email;
   private String fone;
+  private String usuario;
+  private String senha;
+  
+  
+  public static boolean  podeLogar(String pUser, String pSenha){
+      Connection con = Conexao.conectar();
+      String sql = "select * from cliente where usuario = ? and senha = ?";
+      try {
+           PreparedStatement stm = con.prepareStatement(sql);
+           stm.setString(1, pUser);
+           stm.setString(2, pSenha);
+           ResultSet rs = stm.executeQuery();
+           return rs.next();            
+           
+       } catch (SQLException ex) {
+           System.out.println("Erro: " + ex.getMessage());
+       }
+      return true;
+   }  
+  
 
     @Override
     public String toString() {
@@ -25,12 +45,28 @@ public class Cliente {
                 ", email=" + email 
                 + ", fone=" + fone + '}';
     }
+    
+    
+    public boolean userExiste(String pUser){
+      Connection con = Conexao.conectar();
+      String sql = "select * from cliente where usuario = ?";
+      try {
+           PreparedStatement stm = con.prepareStatement(sql);
+           stm.setString(1, pUser);
+           ResultSet rs = stm.executeQuery();
+           return rs.next();            
+           
+       } catch (SQLException ex) {
+           System.out.println("Erro: " + ex.getMessage());
+       }
+      return true;
+   }  
   
   
    public boolean salvar(){
        String sql="insert into cliente(cpf, nome, numerocartao, ";
-               sql+= "email, fone) ";
-               sql+="values(?,?,?,?,?)";
+               sql+= "email, fone, usuario, senha) ";
+               sql+="values(?,?,?,?,?, ?, ?)";
                
         Connection  con = Conexao.conectar();
         try {
@@ -40,6 +76,8 @@ public class Cliente {
             stm.setString(3, this.numerocartao);
             stm.setString(4, this.email);
             stm.setString(5, this.fone);
+            stm.setString(6, this.usuario);
+            stm.setString(7, this.senha);
             stm.execute();
             
         } catch (SQLException ex) {
@@ -209,6 +247,22 @@ public class Cliente {
 
     public void setFone(String fone) {
         this.fone = fone;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
   
 }

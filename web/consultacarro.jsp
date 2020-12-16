@@ -12,7 +12,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="style/estilos.css">
         <style>
+            
             table {
                 font-family: arial, sans-serif;
                 border-collapse: collapse;
@@ -27,10 +29,21 @@
 
             tr:nth-child(even) {
                 background-color: #B0E0E6;
-            }
-        </style>
+            }    
+            
+             
+            </style>
     </head>
     <body>
+        <header>
+            <script src="scripts/cabecalho.js" ></script>
+        </header>
+        <section>
+            <nav>
+        <script src="scripts/menu.js" > </script>
+         </nav>
+             <article>
+                <div>
         <h1>Consulta carro</h1>
         <hr />
         <%
@@ -50,6 +63,8 @@
             <th>Excluir</th>
         </thead> 
         <tbody>
+            </article>
+                </div>
             <% for (Carro c : carros) {%>
             <tr>
                 <td><% out.write( c.getPlaca());%></td>
@@ -75,6 +90,10 @@
 
         </tbody>
 </table>
+            <footer>
+            <script src="scripts/rodape.js"></script>
+        </footer>   
+            
 </body>
 </html>
 

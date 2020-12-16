@@ -13,8 +13,18 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="style/estilos.css">
     </head>
     <body>
+        <header>
+            <script src="scripts/cabecalho.js" ></script>
+        </header>
+        <section>
+            <nav>
+                <script src="scripts/menu.js"></script>  
+            </nav>
+            <article>
+        
         <%
             List<Locacao> locacoes = new ArrayList<>();
             String cpfcliente = request.getParameter("cpfcliente");
@@ -51,9 +61,19 @@
                         <td><%out.write("<a href=cadastrodevolucao.jsp?idlocacao="+ loc.getId()+">Devolver</a>");%></td>
                     </tr>
                     <%}%>
-                </tbody>    
+                </tbody> 
+                
             </table>
+                
 
+        
+                    
         </form>
+            </article>
+        </section>
+                <footer>
+            <script src="scripts/rodape.js"></script>
+        </footer>
+                
     </body>
 </html>

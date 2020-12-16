@@ -12,6 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="style/estilos.css">
         <%
           Locacao locacao = new Locacao();
           ResultSet rs = locacao.consultarInner();
@@ -41,7 +42,11 @@
                     <td><%out.write(rs.getString("nome"));%></td>
                     <td><%out.write(rs.getString("data"));%></td>
                     <td><%out.write(rs.getString("dataentrega"));%></td>
+                    <%if(rs.getString("datadevolucao") != null){%>
                     <td><%out.write(rs.getString("datadevolucao"));%></td>
+                        
+                    <%}%>
+                    
                 </tr>
                 <%}%>
             </tbody>
